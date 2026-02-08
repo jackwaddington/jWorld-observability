@@ -1,7 +1,7 @@
 # jWorld-observability
 
 Lightweight Prometheus + Grafana monitoring stack for a resource-constrained k3s cluster.
-Deployed via Argo CD from [homelab-gitops](https://github.com/jackwaddington/homelab-gitops).
+Deployed via Argo CD from [homelab-gitops](https://github.com/jackwaddington/homelab-gitops) to a [k3s cluster](https://github.com/jackwaddington/k3s).
 
 ## Components
 
