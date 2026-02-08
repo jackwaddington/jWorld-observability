@@ -1,7 +1,7 @@
 # jWorld-observability
 
 Lightweight Prometheus + Grafana monitoring stack for a resource-constrained k3s cluster.
-Designed for Argo CD — point an Application at the `monitoring/` directory.
+Deployed via Argo CD from [homelab-gitops](https://github.com/jackwaddington/homelab-gitops).
 
 ## Components
 
@@ -44,7 +44,7 @@ metadata:
 spec:
   project: default
   source:
-    repoURL: <your-repo-url>
+    repoURL: https://github.com/jackwaddington/jWorld-observability.git
     targetRevision: main
     path: monitoring
     directory:
