@@ -50,6 +50,14 @@ data:
         kubernetes_sd_configs:
           - role: node
 
+      # Scrape Pi Zero timelapse metrics (external bare-metal device)
+      - job_name: "timelapse"
+        scrape_interval: 60s
+        static_configs:
+          - targets: ["PI_IP_ADDRESS:8080"]  # TODO: replace with actual Pi IP
+            labels:
+              device: "Pi0Cam"
+
       # Auto-discover pods with prometheus.io annotations
       - job_name: "kubernetes-pods"
         kubernetes_sd_configs:
