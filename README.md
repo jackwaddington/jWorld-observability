@@ -60,6 +60,16 @@ spec:
       - CreateNamespace=true
 ```
 
+## External Targets
+
+### [smart-timelapse-pipeline](https://github.com/jackwaddington/smart-timelapse-pipeline)
+
+A Raspberry Pi Zero running a daily timelapse camera. The Pi exposes Prometheus metrics at `:8080/metrics` via a lightweight Python server (zero dependencies). Scraped as a static target since it runs bare-metal, not as a k8s pod.
+
+- **Job:** `timelapse` (60s scrape interval)
+- **Metrics:** capture progress, photo count, errors, disk usage, CPU temperature, backup status
+- **Config:** `monitoring/prometheus/configmap.yaml` (static target entry)
+
 ## Adding Other Projects
 
 Prometheus auto-discovers any pod with the right annotations. To monitor another app,

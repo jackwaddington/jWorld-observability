@@ -54,7 +54,7 @@ data:
       - job_name: "timelapse"
         scrape_interval: 60s
         static_configs:
-          - targets: ["192.168.0.80:8080"]  # TODO: replace with actual Pi IP
+          - targets: ["192.168.0.80:8080"]
             labels:
               device: "Pi0Cam"
 
