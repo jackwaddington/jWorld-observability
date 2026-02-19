@@ -70,6 +70,14 @@ A Raspberry Pi Zero running a daily timelapse camera. The Pi exposes Prometheus 
 - **Metrics:** capture progress, photo count, errors, disk usage, CPU temperature, backup status
 - **Config:** `monitoring/prometheus/configmap.yaml` (static target entry)
 
+### [moped](https://github.com/jackwaddington/moped)
+
+Django REST API tracking moped fuel consumption. Runs as a k8s pod with Prometheus annotations, so it's auto-discovered by Prometheus (no static target needed).
+
+- **Metrics path:** `/api/metrics` (port 8000)
+- **Custom metrics:** `moped_current_odometer_km`, `moped_cost_per_km`, `moped_days_since_last_fueling`, `moped_km_until_service`, `moped_sync_operations_total`, `moped_entries_synced_last`
+- **Standard metrics:** django-prometheus request counts, latencies, DB queries
+
 ## Adding Other Projects
 
 Prometheus auto-discovers any pod with the right annotations. To monitor another app,
